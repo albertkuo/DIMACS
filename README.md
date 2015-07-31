@@ -15,9 +15,9 @@ This repository contains all the work that I did for the DIMACS REU. See my webp
 ## Data Integration + Analysis 
 - `exp.R` - integrate enhancer prediction from histone marks and conduct exploratory analysis of eRNA data
 - `tss.ipynb` - finds distances to nearest transcription start site for each state (labeled in Spectacle)
-..* `tss.R` - plots output of tss.ipynb
+ - `tss.R` - plots output of tss.ipynb
 - `p300.ipynb` - finds overlap with p300 for each state (labeled in Spectacle)
-..* `p300.R` - plots output of p300.ipynb
+ - `p300.R` - plots output of p300.ipynb
 
 
 ## Machine Learning Models
