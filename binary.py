@@ -1,4 +1,4 @@
-# Adds binary TPM feature as a new column to each chromosome file consisting of 8 histone marks
+# The following code adds binary TPM feature as a new column to each chromosome file consisting of 8 histone marks
 import glob
 import os
 import pandas as pd
@@ -16,10 +16,9 @@ def get_data(filename, chrom):
 	dat['chr'] = chrom
 	dat['lower'] = np.arange(1,200*(nrows),200)
 	dat['upper'] = np.arange(200,200*(nrows+1),200).reshape(nrows,1)
-	#dat.head()
 	return dat
 
-files = glob.glob('Spectacle/SAMPLEDATA_HG19_NEW/*.txt')           # create the list of files
+files = glob.glob('Spectacle/SAMPLEDATA_HG19_NEW/*.txt')  # create the list of files
 for filename in files:
 	## read file
 	print filename
@@ -31,13 +30,13 @@ for filename in files:
 	query = zip(dat['lower'],dat['upper'])
 	data = zip(chr_TPM['lower'],chr_TPM['upper'])
 
-	#Code taken from: https://www.biostars.org/p/99/
+	#Modified code from https://www.biostars.org/p/99/
 	def find(start, end, tree):
-		"Returns a list with the overlapping intervals"
+		#Creates list with the overlapping intervals
 		out = []
 		tree.intersect( start, end, lambda x: out.append(x) )
-		return not not out
 		#return True if there is an intersection
+		return not not out
 
 	# start the root at the first element
 	start, end = data[0]
@@ -56,7 +55,7 @@ for filename in files:
 	print dat['TPM'].value_counts()
 
 	## write file
-	new_filename = "GM12878_chr"+chrom+"_binary_new"+".txt"
+	new_filename = "GM12878_chr"+chrom+"_binary_TPM"+".txt"
 	with open(new_filename, 'a') as the_file:
 		the_file.write('GM12878\tchr'+chrom+'\n')
 		dat.to_csv(the_file, sep='\t', index=False)
