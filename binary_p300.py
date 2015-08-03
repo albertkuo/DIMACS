@@ -1,4 +1,6 @@
+# Albert Kuo, 2015
 # The following code adds p300 feature as a new column to each chromosome file
+# Note: It does not handle chromM or chromX
 import glob
 import os
 import pandas as pd
@@ -6,6 +8,7 @@ import numpy as np
 from random import randint, seed
 from quicksect import IntervalNode
 
+# read p300 data
 p300 = pd.read_table('data/GM12878_distal_P300_align.hg19.txt.gz', compression = 'gzip', header=None)
 p300.columns = ['chr','lower']
 p300['upper'] = p300['lower']+200

@@ -1,4 +1,6 @@
+# Albert Kuo, 2015
 # The following code adds binary TPM feature as a new column to each chromosome file consisting of 8 histone marks
+# Note: It does not handle chromM or chromX
 import glob
 import os
 import pandas as pd
@@ -6,6 +8,7 @@ import numpy as np
 from random import randint, seed
 from quicksect import IntervalNode
 
+# read eRNA data
 df = pd.read_table('data/condensed2.txt')
 TPM = df.iloc[:,0:4]
 TPM = TPM[TPM['CNhs12331']>0] # Select only the rows with TPM>0
