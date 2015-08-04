@@ -9,7 +9,7 @@ from random import randint, seed
 from quicksect import IntervalNode
 
 # read eRNA data
-df = pd.read_table('data/condensed2.txt')
+df = pd.read_table('data/eRNA_condensed.txt')
 TPM = df.iloc[:,0:4]
 TPM = TPM[TPM['CNhs12331']>0] # Select only the rows with TPM>0
 
@@ -53,9 +53,9 @@ for filename in files:
 	for start, end in query:
 		overlap.append(find(start, end , tree))
 
-	dat['TPM'] = map(int, overlap)
+	dat['eRNA'] = map(int, overlap)
 	dat = dat.ix[:, [0,1,2,3,4,5,6,7,11]]
-	print dat['TPM'].value_counts()
+	print dat['eRNA'].value_counts()
 
 	## write file
 	new_filename = "GM12878_chr"+chrom+"_binary_TPM"+".txt"
