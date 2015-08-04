@@ -10,8 +10,8 @@ This repository contains the work I did for the DIMACS REU. See my webpage [here
 
 **For SVM/Logit Input**
 - `integrate_all` - integrates chromatin marks, eRNA, p300, and tfbs into one file (combination of add_feature_v1 and add_feature_v2)
-- `add_feature_v1.ipynb` - given multiple files (one per chromosome), adds additional feature (p300) with output in one file for all chromosomes
-- `add_feature_v2.ipynb` - given one file (containing all chromosomes), adds additional feature (tfbs) to the file
+ - `add_feature_v1.ipynb` - given multiple files (one per chromosome), adds additional feature (p300) with output in one file for all chromosomes
+ - `add_feature_v2.ipynb` - given one file (containing all chromosomes), adds additional feature (tfbs) to the file
 
 ## Data Analysis 
 - `exp.R` - conducts exploratory analysis of eRNA data with enhancer predictions and outputs eRNA data in condensed form
