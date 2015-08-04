@@ -21,7 +21,8 @@ This repository contains the work I did for the DIMACS REU. See my webpage [here
  - `p300.R` - plots output of p300.ipynb
 
 ## Machine Learning Models
-- `svm_logit.ipynb` - runs SVM and logistic regression
+- `svm.ipynb` - runs support vector machine 
+- `logit.ipynb` - runs logistic regression
 
 ## Modules
 - `quicksect.py` - interval search with tree (imported from [here](https://github.com/brentp/quicksect)) 
